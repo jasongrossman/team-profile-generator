@@ -1,67 +1,66 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const allTeamMembers = [];
-const Employee = require('./lib/Employee');
+// const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const generateHTMLTemplate = require('./fs');
 
 
 generateTeam = () => {
-    fs.writeFile('My_Team', html, {
-
-    })
+    fs.writeFileSync('My_Team.html', generateHTMLTemplate(allTeamMembers))
 }
 
-const employeePrompt = () => {
-    return inquirer.prompt([
-        {
-            type: 'text',
-            name: 'employeeName',
-            message: 'What is the name of this employee?',
-            validate: employeeName => {
-                if (employeeName) {
-                  return true;
-                } else {
-                  console.log('You must provide the Employee name.');
-                  return false;
-                }
-              }
-        },
-        {
-            type: 'text',
-            name: 'employeeId',
-            message: 'What is the ID for this employee?',
-            validate: employeeId => {
-                if (employeeId) {
-                  return true;
-                } else {
-                  console.log('You must provide the Employee ID.');
-                  return false;
-                }
-              }
-        },
-        {
-            type: 'text',
-            name: 'employeeEmail',
-            message: 'What is the email for this employee?',
-            validate: employeeEmail => {
-                if (employeeEmail) {
-                  return true;
-                } else {
-                  console.log('You must provide the Employee email.');
-                  return false;
-                }
-              }
-        },
-        {
-            type: 'checkbox',
-            name: 'role',
-            message: "What is this Employee's role?",
-            choices: ["Manager", "Engineer", "Intern"]
-        }
-    ])
-}
+// const employeePrompt = () => {
+//     return inquirer.prompt([
+//         {
+//             type: 'text',
+//             name: 'employeeName',
+//             message: 'What is the name of this employee?',
+//             validate: employeeName => {
+//                 if (employeeName) {
+//                   return true;
+//                 } else {
+//                   console.log('You must provide the Employee name.');
+//                   return false;
+//                 }
+//               }
+//         },
+//         {
+//             type: 'text',
+//             name: 'employeeId',
+//             message: 'What is the ID for this employee?',
+//             validate: employeeId => {
+//                 if (employeeId) {
+//                   return true;
+//                 } else {
+//                   console.log('You must provide the Employee ID.');
+//                   return false;
+//                 }
+//               }
+//         },
+//         {
+//             type: 'text',
+//             name: 'employeeEmail',
+//             message: 'What is the email for this employee?',
+//             validate: employeeEmail => {
+//                 if (employeeEmail) {
+//                   return true;
+//                 } else {
+//                   console.log('You must provide the Employee email.');
+//                   return false;
+//                 }
+//               }
+//         },
+//         {
+//             type: 'checkbox',
+//             name: 'role',
+//             message: "What is this Employee's role?",
+//             choices: ["Manager", "Engineer", "Intern"]
+//         }
+//     ])
+// }
 
 const ManagerPrompt = () => {
     return inquirer.prompt([
