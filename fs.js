@@ -76,7 +76,6 @@ const generateHTMLTemplate = (allTeamMembers) => {
   }
   
   for(var i = 0; i < teamHTML.length; i++){
-    console.log(teamHTML[i])
     tempHTML =  tempHTML + teamHTML[i];
   }
 

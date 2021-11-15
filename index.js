@@ -12,55 +12,6 @@ generateTeam = () => {
     fs.writeFileSync('My_Team.html', generateHTMLTemplate(allTeamMembers))
 }
 
-// const employeePrompt = () => {
-//     return inquirer.prompt([
-//         {
-//             type: 'text',
-//             name: 'employeeName',
-//             message: 'What is the name of this employee?',
-//             validate: employeeName => {
-//                 if (employeeName) {
-//                   return true;
-//                 } else {
-//                   console.log('You must provide the Employee name.');
-//                   return false;
-//                 }
-//               }
-//         },
-//         {
-//             type: 'text',
-//             name: 'employeeId',
-//             message: 'What is the ID for this employee?',
-//             validate: employeeId => {
-//                 if (employeeId) {
-//                   return true;
-//                 } else {
-//                   console.log('You must provide the Employee ID.');
-//                   return false;
-//                 }
-//               }
-//         },
-//         {
-//             type: 'text',
-//             name: 'employeeEmail',
-//             message: 'What is the email for this employee?',
-//             validate: employeeEmail => {
-//                 if (employeeEmail) {
-//                   return true;
-//                 } else {
-//                   console.log('You must provide the Employee email.');
-//                   return false;
-//                 }
-//               }
-//         },
-//         {
-//             type: 'checkbox',
-//             name: 'role',
-//             message: "What is this Employee's role?",
-//             choices: ["Manager", "Engineer", "Intern"]
-//         }
-//     ])
-// }
 
 const ManagerPrompt = () => {
     return inquirer.prompt([
@@ -121,8 +72,6 @@ const ManagerPrompt = () => {
     .then(inputs => {
         const manager = new Manager(inputs.employeeName, inputs.employeeId, inputs.employeeEmail, inputs.OfficeNumber);
         allTeamMembers.push(manager);
-        console.log(manager);
-        console.log(allTeamMembers);
         teamBuilder();
     })
 
@@ -210,8 +159,6 @@ const EngineerPrompt = () => {
     .then(inputs => {
         const engineer = new Engineer(inputs.employeeName, inputs.employeeId, inputs.employeeEmail, inputs.github);
         allTeamMembers.push(engineer);
-        console.log(engineer);
-        console.log(allTeamMembers);
         teamBuilder();
     })
 };
@@ -274,8 +221,6 @@ const InternPrompt = () => {
         .then(inputs => {
             const intern = new Intern(inputs.employeeName, inputs.employeeId, inputs.employeeEmail, inputs.school);
             allTeamMembers.push(intern);
-            console.log(intern);
-            console.log(allTeamMembers);
             teamBuilder();
         })
 };
@@ -285,19 +230,6 @@ function init() {
     console.log("Let's build your team!");
     console.log("First, let's start with the team's Manager.");
     ManagerPrompt();
-        //     if(responses.menu.choices === "Add Team Member") {
-        //        const employeeInfo =  employeePrompt();
-        //        const newEmployee = new Employee(employeeInfo.employeeName, employeeInfo.employeeId, employeeInfo.employeeEmail);
-        //        allTeamMembers.push(newEmployee);
-        //        teamBuilder();
-
-        //     } else if(responses.role.choices === "Engineer") {
-        //         EngineerPrompt();
-        //     } else if(responses.role.choices === "Intern") {
-        //         InternPrompt();
-        //     } else {
-        //         generateTeam();
-        //     }
         }
 
 init();
