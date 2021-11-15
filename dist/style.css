@@ -1,0 +1,32 @@
+
+header {
+    background: red;
+    height: 80px;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card {
+    display: inline-block;
+    width: 29%;
+    margin: 2%;
+    border-radius: 5px;
+}
+
+.card-title  {
+    background: blue;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+}
+
+.card-subtitle {
+    background: blue;
+    color: white;
+    font-size: 24px;
+    padding: 5px;
+    text-align: center;
+}
